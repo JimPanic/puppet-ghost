@@ -20,10 +20,12 @@
 
 class ghost(
   $user            = 'ghost',       # Ghost should run as its own user
+  $manage_user     = true,          # Do manage the ghost user
   $group           = 'ghost',       # Ghost GID and group to create
+  $manage_group    = true,          # Do manage the ghost group
   $home            = '/home/ghost', # Ghost user's home directory, default base for blogs
   $include_nodejs  = false,         # Whether or not setup should include nodejs module
-  ) {
+) {
 
   validate_string($user)
   validate_string($group)

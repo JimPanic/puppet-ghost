@@ -38,8 +38,8 @@ class, adds the ghost user and group, and finally starts ghost.
 * Packages
   * `nodejs`
 	* `npm`
-	* `unzip`
-	* `curl`
+	* `unzip` [1]
+	* `curl`  [1]
 	* `supervisor`
 * Services
     * `supervisor`
@@ -47,9 +47,12 @@ class, adds the ghost user and group, and finally starts ghost.
     * `/home/ghost/`
     * `/etc/supervisor/conf.d/ghost_<blog>.conf`
 * User
-    * `ghost`
+    * `ghost` [2]
 * Group
-    * `ghost`
+    * `ghost` [2]
+
+[1] Installed via `ensure_packages` if not installed by other means already.
+[2] Only managed if `$manage_user` and `$manage_group` are true (which is the default).
 
 ### Beginning with andschwa-ghost
 

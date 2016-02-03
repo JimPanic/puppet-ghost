@@ -14,15 +14,19 @@ class ghost::setup {
     include '::nodejs'
   }
 
-  group { $ghost::group:
-    ensure => present,
+  if $::ghost::manage_group {
+    group { $ghost::group:
+      ensure => present,
+    }
   }
 
-  user { $ghost::user:
-    ensure     => present,
-    gid        => $ghost::group,
-    home       => $ghost::home,
-    managehome => true,
-    require    => Group[$ghost::group],
+  if $::ghost::manage_user {
+    user { $ghost::user:
+      ensure     => present,
+      gid        => $ghost::group,
+      home       => $ghost::home,
+      managehome => true,
+      require    => Group[$ghost::group],
+    }
   }
 }
