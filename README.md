@@ -51,8 +51,8 @@ class, adds the ghost user and group, and finally starts ghost.
 * Group
     * `ghost` [2]
 
-[1] Installed via `ensure_packages` if not installed by other means already.
-[2] Only managed if `$manage_user` and `$manage_group` are true (which is the default).
+[1]: Installed via `ensure_packages()` if not installed by other means already.
+[2]: Only managed if `$manage_user` and `$manage_group` are true (which is the default).
 
 ### Beginning with andschwa-ghost
 
