@@ -69,7 +69,7 @@ define ghost::blog(
   validate_hash($mail_options)
 
   if $manage_service {
-    validate_re($ensure_service, '(running|present|stopped|absent)')
+    validate_re($ensure_service, '(running|true|stopped|false)')
   }
 
   package { $package_name:
